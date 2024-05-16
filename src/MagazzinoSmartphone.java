@@ -37,7 +37,7 @@ public class MagazzinoSmartphone {
        int i=0;
        boolean trovato=false;
        while (trovato!=true&&i<count){
-        if(!smartphones[i].equals(smartphone)){
+        if(smartphones[i].equals(smartphone)){
             trovato=true;
         }
         i++;
@@ -45,7 +45,7 @@ public class MagazzinoSmartphone {
        if(trovato==true){
         smartphones[i-1]=null;
         count--;
-        for(int x=i; x<count;x++){
+        for(int x=i-1; x<count;x++){
             smartphones[x]=smartphones[x+1];
 
         }
@@ -60,16 +60,41 @@ public class MagazzinoSmartphone {
 
 
     public Smartphone getSmartphoneByBrand(String brand) {
-        Smartphone smartphone = null;
-
-
-        return smartphone;
+    int i=0;
+       boolean trovato=false;
+       while (trovato!=true&&i<count){
+        if(smartphones[i].getBrand().equals(brand)){
+            trovato=true;
+        }
+        i++;
+       }
+       if(trovato=true){
+        return smartphones[i-1];
+       }
+       else{
+        return null;
+       }
+       
     }
 
     public MagazzinoSmartphone getSmartphonesByStorageCapacity(int storageCapacity) {
         MagazzinoSmartphone magazzinoSmartphone = new MagazzinoSmartphone();
+        // for (int x=0; x<count;x++){
+        //         if(smartphones[x].getStorageCapacity()==storageCapacity){
+        //             magazzinoSmartphone[x]=new Smartphone(smartphones[x]);
+        //         }
+        //        }
+        //        if(trovato=true){
+        //         return smartphones[i-1];
+        //        }
+        //        else{
+        //         return null;
+        //        }
+       
+       
 
-
+        // }
+  
         return magazzinoSmartphone;
     }
 
